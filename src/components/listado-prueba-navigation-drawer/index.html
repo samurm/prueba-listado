@@ -1,0 +1,25 @@
+<v-navigation-drawer src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg" :value="getNavigation" @input="toogleNavigation" floating clipped fixed dark app>
+    <v-list-item two-line>
+        <v-list-item-avatar>
+            <img src="https://lh3.googleusercontent.com/ogw/ADGmqu-BQjF7IaPElNnsmAm7HZ9qnd1-mLKtyHUpoYCz=s32-c-mo">
+        </v-list-item-avatar>
+        <v-list-item-content>
+            <v-list-item-title>Samuel Ramos Muñoz</v-list-item-title>
+        </v-list-item-content>
+    </v-list-item>
+
+    <v-divider></v-divider>
+
+    <v-list dense>
+        <div v-for="(link, key) in links" :key="key">
+            <v-list-item :to="{ name: link.route }">
+                <v-list-item-action>
+                    <v-icon>{{ link.icon }}</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title>{{ link.name }}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+        </div>
+    </v-list>
+</v-navigation-drawer>

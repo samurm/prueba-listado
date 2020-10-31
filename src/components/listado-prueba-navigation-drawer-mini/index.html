@@ -1,0 +1,30 @@
+<v-card v-if="!getNavigation" tile img="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg" dark>
+    <v-list-item>
+      <v-list-item-avatar>
+          <img src="https://lh3.googleusercontent.com/ogw/ADGmqu-BQjF7IaPElNnsmAm7HZ9qnd1-mLKtyHUpoYCz=s32-c-mo">
+      </v-list-item-avatar>
+      <v-list-item-content>
+          <v-list-item-title>Samuel Ramos Muñoz</v-list-item-title>
+      </v-list-item-content>
+      <v-list-item-content class="text-right">
+        <v-list-item-title class="pr-3 py-3">
+            <v-icon @click="toogleMinimizeNavigationMini">{{ minimizeNavigationMini ? 'mdi-chevron-up' : 'mdi-chevron-down'}}</v-icon>
+        </v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+
+    <v-divider></v-divider>
+
+    <v-list dense v-if="!minimizeNavigationMini" style="background-image: url(https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg)">
+      <div v-for="(link, key) in links" :key="key">
+          <v-list-item :to="{ name: link.route }">
+              <v-list-item-action>
+                  <v-icon>{{ link.icon }}</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                  <v-list-item-title>{{ link.name }}</v-list-item-title>
+              </v-list-item-content>
+          </v-list-item>
+      </div>
+    </v-list>
+  </v-card>

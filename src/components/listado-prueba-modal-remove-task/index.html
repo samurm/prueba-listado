@@ -1,0 +1,37 @@
+<v-dialog v-model="modalRemoveTask" width="500">
+  <v-card class="pa-5">
+    <v-card-title class="justify-center pt-5">
+        Vas a eliminar la tarea:
+    </v-card-title>
+
+    <v-card-subtitle class="text-center pa-5 pt-4">
+        {{ removeTaskName }}
+    </v-card-subtitle>
+
+    <v-card-title class="title pt-0 mb-3 justify-center" primary-title>
+      ¿Estás segura/o?
+    </v-card-title>
+
+    <v-card-actions wrap class="pb-5 justify-center flex-column flex-sm-row">
+      <v-btn
+        depressed
+        min-width="110px"
+        color="ternary"
+        @click="modalRemoveTask = false"
+        class="ma-2"
+      >
+        Cancelar
+      </v-btn>
+
+      <v-btn
+        depressed
+        min-width="110px"
+        color="error"
+        @click="removeItem()"
+        class="ma-2"
+      >
+        Eliminar
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+</v-dialog>

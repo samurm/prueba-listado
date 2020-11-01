@@ -8,6 +8,8 @@
             label="Nombre de la tarea"
             dense
             outlined
+            required
+            :rules="nombreTareaRules"
             v-model="nombreTarea"
           ></v-text-field>
         </v-col>
@@ -35,6 +37,7 @@ import ApiService from "@/common/api.service";
 export default {
   name: "List",
   data: () => ({
+    nombreTareaRules: [v => !!v || "Campo obligatorio"],
     valid: false,
     nombreTarea: ""
   }),
